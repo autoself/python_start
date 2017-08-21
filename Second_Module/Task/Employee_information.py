@@ -105,15 +105,16 @@ class Starff_Info_Class(object):
                 wh_info = re.split('\s+where\s+',check_statinfo)
                 d_info = re.findall('\s*like\s*',wh_info[1])
                 if d_info:
-                    ds_info = re.split('\s+like\s+',wh_info[1])
+                    ds_info = re.split('\s+(like)\s+',wh_info[1])
                     d_feild = self.Check_field(ds_info[0].strip())[0]
-                    d_value = re.findall('[a-zA-Z0-9]+',ds_info[1].strip())[0]
+                    d_value = re.sub('[\"|\']', '', str(ds_info[2]))
+                    #d_value = re.findall('[a-zA-Z0-9]+',ds_info[1].strip())[0]
                     self.Select_info(checkfeild, d_feild, d_value, 'like')
                 else:
-                    dc_info = re.findall('[=|>|<]',wh_info[1])[0]
-                    ds_info = re.split('\s+[=|>|<]\s+', wh_info[1])
-                    d_feild = self.Check_field(ds_info[0].strip())[0]
-                    d_value = re.findall('[a-zA-Z0-9]+', ds_info[1].strip())[0]
+                    ds_info = re.split('\s*(=|>|<)\s*', wh_info[1])
+                    d_feild = self.Check_field(ds_info[0])[0]
+                    d_value = re.sub('[\"|\']','',str(ds_info[2]))
+                    dc_info = ds_info[1]
                     self.Select_info(checkfeild, d_feild, d_value, dc_info)
         else:
             print('Faild')
