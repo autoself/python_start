@@ -93,6 +93,11 @@ def common_all_div(arg):
 
 
 def main_info(numbers):
+    '''
+    去掉括号
+    :param numbers:
+    :return:
+    '''
     inapp = re.search('\(([\+\-\*\/]*\d+\.?\d*){2,}\)',numbers)
     if not inapp:
         args = common_all_div(numbers)
