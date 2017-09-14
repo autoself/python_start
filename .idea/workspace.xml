@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a8edf1-851c-490a-a682-bc509e59aca7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/string_01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/string_02.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/string_03.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/string_04.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/test_01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/test_02.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/test_03.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Third_Module/Practice/class_01.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Second_Module/Task/computer.py" afterPath="$PROJECT_DIR$/Second_Module/Task/computer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Third_Module/Practice/class_01.py" afterPath="$PROJECT_DIR$/Third_Module/Practice/class_01.py" />
     </list>
     <ignored path="python_start.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +27,8 @@
       <file leaf-file-name="class_01.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Third_Module/Practice/class_01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="225">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -170,7 +163,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1442" height="839" extended-state="7" />
+    <frame x="-1" y="28" width="1442" height="839" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18194444" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
@@ -184,6 +177,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -194,8 +195,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Third_Module/Practice/class_01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="225">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding />
         </state>
       </provider>
