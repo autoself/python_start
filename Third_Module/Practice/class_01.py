@@ -33,4 +33,3 @@ a.change_name('A8')
 print(str(a._Role__blood))
 a.get_moot()
 
-print('aaa')
