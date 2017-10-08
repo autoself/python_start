@@ -10,6 +10,7 @@ import os
 import sys
 import json
 import re
+import struct
 
 import subprocess
 
@@ -54,17 +55,8 @@ class FtpServer(object):
                 return True
         return False
 
-    def System_write(self,data):
-        command = re.split('\s+',data)
-        if command[0] in self.commandlist:
-            check_data = self.commandlist[command[0]](data)
-            return check_data
-        else:
-            status = b'Please enter the correct command,Please command [help]'
-            return status
 
-
-    def Help_list(self,datalist):
+    def Help_list(self):
         data = '''
         ls               --View current file
         rm [file]        --Delete file
@@ -105,11 +97,57 @@ class FtpServer(object):
         return status
 
 
-    def Upload_file(self):
-        pass
+    def Upload_file(self,fconn, datalist):
+        ospath = os.path.join(BASE_DIR, self.home, self.username)
+        os.chdir(ospath)
+        command = re.split('\s+', datalist)
+        newfile = os.path.basename(command[1])
+        nums = fconn.recv(4)
+        fileLen = struct.unpack('i',nums)[0]
+        print(fileLen)
+        outfile = open(newfile,'w')
+        datanow = b''
+        while fileLen > 0:
+            readLen = 1024
+            if fileLen < readLen: readLen = fileLen
+            data = fconn.recv(readLen)
+            datanow = datanow + data
+            fileLen -= readLen
+        outfile.write(datanow.decode('utf-8'))
+        outfile.close()
+        status = b'The file you upload file Success!'
+        return status
 
-    def Download_file(self):
-        pass
+
+    def Download_file(self,fconn,datalist):
+        ospath = os.path.join(BASE_DIR, self.home, self.username)
+        os.chdir(ospath)
+        command = re.split('\s+', datalist)
+        fconn.send(b'')
+        newfile = os.path.basename(command[1])
+        if os.path.isfile(newfile):
+            with open(newfile, 'r', encoding='utf-8') as fs:
+                for line in fs:
+                    fconn.send(line.encode('utf-8'))
+            status = b'The file you download file Success!'
+        else:
+            status = b'The file does not exist'
+        return status
+
+
+    def System_write(self, fconn,data):
+        command = re.split('\s+', data)
+        if command[0] in self.commandlist:
+            if command[0] =='upload':
+                check_data = self.commandlist[command[0]](fconn,data)
+            elif command[0] == 'download':
+                check_data = self.commandlist[command[0]](fconn, data)
+            else:
+                check_data = self.commandlist[command[0]](data)
+            return check_data
+        else:
+            status = b'Please enter the correct command,Please command [help]'
+            return status
 
     def SockBind(self):
         '''
@@ -143,11 +181,12 @@ class FtpServer(object):
 
             while True:
                 data = fconn.recv(1024).decode('utf-8')
-                if not isinstance(data,str):
+                if not isinstance(data, str):
                     break
                 if data:
-                    datas =  self.System_write(data)
+                    datas = self.System_write(fconn,data)
                     fconn.send(datas)
+                    break
                 else:
                     fconn.send(b'')
                     break

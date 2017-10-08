@@ -7,6 +7,10 @@ __date__ = '17-9-26 下午2:35'
 
 import socket
 import json
+import re, os
+import struct
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class FtpClient(object):
     '''
@@ -18,6 +22,7 @@ class FtpClient(object):
         self.port = port
         self.username = username
         self.password = password
+        self.path = os.path.join(BASE_DIR, 'download')
 
     def Auth_login(self,Fclient):
         checkdata = json.dumps({'username': self.username, 'password': self.password})
@@ -26,7 +31,8 @@ class FtpClient(object):
         return auth_login
 
     def ClientBind(self):
-
+        if not os.path.isdir(self.path):
+            os.makedirs(self.path)
         Fclient = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         Fclient.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         try:
@@ -48,6 +54,47 @@ class FtpClient(object):
             data = input('>>>>').strip()
             if not data:
                 continue
+
+            data_str = re.split('\s+',data)
+            if data_str[0] == 'upload':
+                if len(data_str) == 2:
+                    if os.path.isfile(data_str[1]):
+                        Fclient.send(data.encode('utf-8'))
+                        fs = open(data_str[1],'r',encoding='utf-8')
+                        fsrd = fs.read().encode('utf-8')
+                        inputlen = len(fsrd)
+                        datanum = struct.pack('i',inputlen)
+                        Fclient.send(datanum)
+                        while inputlen > 0:
+                            readlen = 1024
+                            if inputlen < readlen:
+                                readlen = inputlen
+                            Fclient.send(fsrd[:readlen])
+
+                            inputlen -=readlen
+                            fsrd = fsrd[readlen:]
+                        fs.close()
+                        continue
+                    else:
+                        print('this is not file!!')
+                        continue
+                else:
+                    print('Please enter the correct command,Please command [help]')
+                    continue
+            elif data_str[0] == 'download':
+                if len(data_str) == 2:
+                    Fclient.send(data.encode('utf-8'))
+                    newfile = os.path.join(self.path,os.path.basename(data_str[1]))
+                    with open(newfile,'w',encoding='utf-8') as fs:
+                        rdata = Fclient.recv(1024).decode('utf-8')
+                        fs.write(rdata)
+                    rdata = Fclient.recv(1024).decode('utf-8')
+                    print(rdata)
+                    continue
+                else:
+                    print('Please enter the correct command,Please command [help]')
+                    continue
+
             Fclient.send(data.encode('utf-8'))
             rdata = Fclient.recv(1024).decode('utf-8')
             if rdata:
@@ -60,7 +107,9 @@ if __name__ == '__main__':
 
     host = 'localhost'
     port = 6969
-    username = input("username:")
-    password = input("password:")
+    #username = input("username:")
+    #password = input("password:")
+    username = 'abc'
+    password = 'abc123'
     fc = FtpClient(host,port,username,password)
     fc.ClientBind()
