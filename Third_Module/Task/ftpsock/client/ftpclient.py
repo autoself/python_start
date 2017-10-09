@@ -70,10 +70,11 @@ class FtpClient(object):
                             if inputlen < readlen:
                                 readlen = inputlen
                             Fclient.send(fsrd[:readlen])
-
                             inputlen -=readlen
                             fsrd = fsrd[readlen:]
                         fs.close()
+                        rdata = Fclient.recv(1024).decode('utf-8')
+                        print(rdata)
                         continue
                     else:
                         print('this is not file!!')
@@ -85,9 +86,18 @@ class FtpClient(object):
                 if len(data_str) == 2:
                     Fclient.send(data.encode('utf-8'))
                     newfile = os.path.join(self.path,os.path.basename(data_str[1]))
-                    with open(newfile,'w',encoding='utf-8') as fs:
-                        rdata = Fclient.recv(1024).decode('utf-8')
-                        fs.write(rdata)
+                    nums = Fclient.recv(4)
+                    fileLen = struct.unpack('i', nums)[0]
+                    outfile = open(newfile, 'w')
+                    datanow = b''
+                    while fileLen > 0:
+                        readLen = 1024
+                        if fileLen < readLen: readLen = fileLen
+                        data = Fclient.recv(readLen)
+                        datanow = datanow + data
+                        fileLen -= readLen
+                    outfile.write(datanow.decode('utf-8'))
+                    outfile.close()
                     rdata = Fclient.recv(1024).decode('utf-8')
                     print(rdata)
                     continue

@@ -56,7 +56,7 @@ class FtpServer(object):
         return False
 
 
-    def Help_list(self):
+    def Help_list(self,datalist):
         data = '''
         ls               --View current file
         rm [file]        --Delete file
@@ -123,12 +123,22 @@ class FtpServer(object):
         ospath = os.path.join(BASE_DIR, self.home, self.username)
         os.chdir(ospath)
         command = re.split('\s+', datalist)
-        fconn.send(b'')
         newfile = os.path.basename(command[1])
         if os.path.isfile(newfile):
-            with open(newfile, 'r', encoding='utf-8') as fs:
-                for line in fs:
-                    fconn.send(line.encode('utf-8'))
+            fs = open(newfile, 'r', encoding='utf-8')
+            fsrd = fs.read().encode('utf-8')
+            inputlen = len(fsrd)
+            print(inputlen)
+            datanum = struct.pack('i', inputlen)
+            fconn.send(datanum)
+            while inputlen > 0:
+                readlen = 1024
+                if inputlen < readlen:
+                    readlen = inputlen
+                fconn.send(fsrd[:readlen])
+                inputlen -= readlen
+                fsrd = fsrd[readlen:]
+            fs.close()
             status = b'The file you download file Success!'
         else:
             status = b'The file does not exist'
@@ -186,7 +196,6 @@ class FtpServer(object):
                 if data:
                     datas = self.System_write(fconn,data)
                     fconn.send(datas)
-                    break
                 else:
                     fconn.send(b'')
                     break
