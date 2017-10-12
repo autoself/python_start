@@ -9,6 +9,7 @@ import socket
 import json
 import re, os
 import struct
+import hmac
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -25,7 +26,8 @@ class FtpClient(object):
         self.path = os.path.join(BASE_DIR, 'download')
 
     def Auth_login(self,Fclient):
-        checkdata = json.dumps({'username': self.username, 'password': self.password})
+        paswd = hmac.new(bytes(self.password,encoding='utf-8'),b'abc')
+        checkdata = json.dumps({'username': self.username, 'password': paswd.hexdigest()})
         Fclient.send(checkdata.encode('utf-8'))
         auth_login = Fclient.recv(1024)
         return auth_login
@@ -117,9 +119,9 @@ if __name__ == '__main__':
 
     host = 'localhost'
     port = 6969
-    #username = input("username:")
-    #password = input("password:")
-    username = 'abc'
-    password = 'abc123'
+    username = input("username:")
+    password = input("password:")
+    #username = 'abc'
+    #password = 'abc123'
     fc = FtpClient(host,port,username,password)
     fc.ClientBind()

@@ -11,6 +11,7 @@ import sys
 import json
 import re
 import struct
+import hmac
 
 import subprocess
 
@@ -47,7 +48,9 @@ class FtpServer(object):
         with open(self.userfile,'r',encoding='utf-8') as fs:
             sqldata = json.load(fs,encoding='utf-8')
         if kwargs['username'] in sqldata:
-            if sqldata[kwargs['username']] == kwargs['password'] :
+            passwd = hmac.new(bytes(sqldata[kwargs['username']],encoding='utf-8'),b'abc')
+            pwd = passwd.hexdigest()
+            if pwd == kwargs['password'] :
                 userhome = os.path.join(BASE_DIR,self.home,kwargs['username'])
                 if not os.path.exists(userhome):
                     os.makedirs(userhome)
