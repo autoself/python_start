@@ -12,17 +12,15 @@ class Student(object):
     '''
       学生
     '''
-    def __init__(self,student_db,class_db,numbers,name,age,achievement,schoole_class):
+    def __init__(self,student_db,class_db,name,age,achievement,schoole_class):
         '''
         :param city               城市
-        :param numbers            学号
         :param name:              学生名
         :param age:               学生年龄
         :param achievement:       学生成绩
         :param schoole_class:     学生班级
         '''
 
-        self.numbers = numbers
         self.name = name
         self.age = age
         self.achievement = achievement
@@ -56,12 +54,12 @@ class Student(object):
                 student_db = pickle.load(fs)
             if student_db:
                 for key in student_db:
-                    if student_db[key]['numbers'] == self.numbers:
+                    if student_db[key]['name'] == self.name:
                         return True
         return False
 
 
-    def create_statudent(self):
+    def create_student(self):
         check_class = self.__check_class()
         if  check_class:
             print('班级不存在,请先创建班级！')
@@ -74,7 +72,7 @@ class Student(object):
         else:
             db = {}
         maxid = maxnums + 1
-        db[maxid] = {'numbers': self.numbers, 'name': self.name, 'age': self.age, 'achievement':self.achievement,'schoole_class':self.schoole_class }
+        db[maxid] = {'name': self.name, 'age': self.age, 'achievement':self.achievement,'schoole_class':self.schoole_class }
         with open(self.__student_db, 'wb') as fp:
             pickle.dump(db, fp)
         return True

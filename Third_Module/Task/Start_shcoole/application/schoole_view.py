@@ -6,25 +6,38 @@ __date__ = '17-10-25 下午8:22'
 
 import os
 import sys
+import pickle
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
+from src.schoole import BaseSchoole
+from application.city import Cityrun
 
+def __check_schoole():
+    db = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'db','schoole.db')
+    if os.path.isfile(db):
+        with open(db,'rb') as fs:
+            data = pickle.load(fs)
+        if data:
+            return True
+    return False
 
-def run(object_city):
+def run():
     shows_view = u'''
     \033[35;1m------- Schoole View --------\033[0m
-    \033[32;1m1、创建课程
-    2、创建班级
-    3、创建老师
-    4、创建学生
-    5、查询课程
-    6、查询班级
-    7、查询老师
-    8、查询学生
-    9、返回
-    10、退出
+    \033[32;1m1、创建学校
+    2、创建课程
+    3、创建班级
+    4、创建讲师
+    5、创建学生
+    6、查询课程
+    7、查询班级
+    8、查询讲师
+    9、查询学生
+    10、查询学校
+    11、返回
+    12、退出
     \033[0m
     '''
     check_status = False
@@ -33,52 +46,93 @@ def run(object_city):
         check_num = input('\033[34;1mPlease nums>>>>\033[0m')
         if check_num.isdigit():
             check_num = int(check_num)
-            if check_num > 0 and check_num < 11:
+            if check_num > 0 and check_num < 13:
                 if check_num == 1:
-                    name = input('课程名:').strip()
-                    price = input('价格:').strip()
-                    outline = input('周期:').strip()
-                    check_status_obj = object_city.create_course(name,price,outline)
+                    name = input('学校名称>>').strip()
+                    addr = input('学校地址>>').strip()
+                    city = input('区域>>').strip()
+                    if not name or not addr or not city :
+                        print('\033[35;1m请把所有参数输入完整,感谢您的合作!\033[0m')
+                        continue
+                    obj = BaseSchoole(name,addr,city)
+                    check_status_obj = obj.create_schoole()
+                    if check_status_obj:
+                        print('\033[35;1m创建%s校区成功!\033[0m' % (city))
+                    else:
+                        print('\033[35;1m创建%s校区失败!\033[0m' % (city))
                     continue
                 elif check_num == 2:
-                    name = input('班级名:').strip()
-                    course_name = input('课程名:').strip()
-                    semester = input('学期:').strip()
-                    check_status_obj = object_city.create_schoole_classe(name,course_name,semester)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj =  Cityrun('create_course')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 3:
-                    numbers = input('老师编号:').strip()
-                    name = input('老师名:').strip()
-                    grade = input('职称:').strip()
-                    school_class = input('任教班级(多个以逗号任开):').strip()
-                    check_status_obj = object_city.create_teacher(numbers,name,grade,school_class)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('create_class')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 4:
-                    numbers = input('学号>>').strip()
-                    name = input('学生名>>').strip()
-                    age = input('年龄>>').strip()
-                    achievement = input('成绩>>').strip()
-                    schoole_class = input('班级>>').strip()
-                    check_status_obj = object_city.create_student(numbers,name,age,achievement,schoole_class)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('create_teacher')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 5:
-                    name = input('课程名:').strip()
-                    check_status_obj = object_city.get_course(name)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('create_student')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 6:
-                    name = input('班级名:').strip()
-                    check_status_obj = object_city.get_class(name)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('get_course')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 7:
-                    name = input('老师名:').strip()
-                    check_status_obj = object_city.get_teacher(name)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('get_class')
+                    if obj:
+                        return True
                     continue
                 elif check_num == 8:
-                    name = input('学生名:').strip()
-                    check_status_obj = object_city.get_student(name)
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('get_teacher')
+                    if obj:
+                        return True
+                    continue
                 elif check_num == 9:
-                    return False
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    obj = Cityrun('get_student')
+                    if obj:
+                        return True
+                    continue
                 elif check_num == 10:
+                    check_schoole_db =  __check_schoole()
+                    if not check_schoole_db:
+                        print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
+                    continue
+                elif check_num == 11:
+                    return False
+                elif check_num == 12:
                     return True
             else:
                 print('\033[33;1m 请选择正确的选项，感谢你的合作!\033[0m')

@@ -14,45 +14,36 @@ class School_Class(object):
     班级
     '''
 
-    def __init__(self,course_db,class_db,name,course_name,semester='第一期'):
+    def __init__(self,teacher_db,course_db,class_db,name,course_name,teacher,semester='第一期'):
         '''
-        :param name:        班级名
-        :param semester:    学期
-        :param course_name: 课程
+        :param teacher_db:     讲师db表
+        :param course_db:      课程db表
+        :param class_db:       班级db表
+        :param name:           班级名
+        :param course_name:    课程名
+        :param teacher:        讲师名
+        :param semester:       学期
         '''
 
         self.name =  name
-        self.semester = semester
         self.course_name = course_name
+        self.semester = semester
+        self.teacher = teacher
+        self.__teacher_db = teacher_db
         self.__course_db = course_db
         self.__class_db = class_db
 
-
-    def __select_course(self):
+    def __check_db(self,db,name):
         '''
-        获取课程
+        查询
         :return:
         '''
-        if os.path.isfile(self.__course_db):
-            with open(self.__course_db,'rb') as fs:
-                course_db = pickle.load(fs)
-            if course_db:
-                for key in course_db:
-                    if course_db[key]['name'] == self.course_name:
-                        return True
-        return False
-
-    def __check_class(self):
-        '''
-        获取班级
-        :return:
-        '''
-        if os.path.isfile(self.__class_db):
-            with open(self.__class_db,'rb') as fs:
-                class_db = pickle.load(fs)
-            if class_db:
-                for key in class_db:
-                    if class_db[key]['name'] == self.name:
+        if os.path.isfile(db):
+            with open(db,'rb') as fs:
+                data = pickle.load(fs)
+            if data:
+                for key in data:
+                    if data[key]['name'] == name:
                         return False
         return True
 
@@ -71,11 +62,15 @@ class School_Class(object):
         return 0
 
     def create_class(self):
-        check_course = self.__select_course()
-        if not check_course:
+        check_course = self.__check_db(self.__course_db,self.course_name)
+        if check_course:
             print('课程不存在,请先创建课程!')
             return False
-        check_class = self.__check_class()
+        check_teacher = self.__check_db(self.__teacher_db,self.teacher)
+        if check_teacher:
+            print('讲师不存在,请先创建讲师！')
+            return False
+        check_class = self.__check_db(self.__class_db,self.name)
         if not check_class:
             print('班级已经存在,无须再创建！')
             return False
@@ -88,7 +83,7 @@ class School_Class(object):
             db = {}
         maxid = maxnums + 1
         create_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
-        db[maxid] = {'name': self.name, 'semester': self.semester, 'course_name': self.course_name,'starttime':create_time}
+        db[maxid] = {'name': self.name, 'semester': self.semester, 'course_name': self.course_name,'teacher':self.teacher}
         with open(self.__class_db, 'wb') as fp:
             pickle.dump(db, fp)
         return True

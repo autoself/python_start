@@ -12,7 +12,7 @@ sys.path.append(BASE_DIR)
 
 from application import schoole_view
 
-def run(object_city):
+def run():
     shows_view = u'''
     \033[35;1m------- City View --------\033[0m
     \033[32;1m1、学校视图
@@ -29,9 +29,9 @@ def run(object_city):
             check_num = int(check_num)
             if check_num > 0 and check_num < 6:
                 if check_num == 1:
-                    check_status = schoole_view.run(object_city)
+                    check_status = schoole_view.run()
                     if check_status:
-                        return True
+                        check_status = True
                 elif check_num == 4:
                     return False
                 elif check_num == 5:
