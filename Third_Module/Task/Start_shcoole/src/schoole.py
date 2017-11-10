@@ -200,6 +200,34 @@ class  Schoole(object):
                         return True
         print('对不起,没有你要查的学生')
 
+
+    def __check_student(self,db,name):
+        '''
+        获取班级
+        :return:
+        '''
+        if os.path.isfile(db):
+            with open(db,'rb') as fs:
+                data = pickle.load(fs)
+            if data:
+                for key in data:
+                    if data[key]['name'] == name:
+                        return False
+        return True
+    def pull_student(self,name,city,schoole_class):
+        check_name = self.__check_student(self.__student_db,name)
+        if check_name:
+            print("\033[34;学员不存在,请先注册!\033[0m")
+            return False
+
+
+
+
+
+
+
+
+
 #if __name__ == '__main__':
 #    object_schoole = Schoole('依林大学院校','北京是环市东路1号','BeiJing')
 #    #object_schoole.create_course('linux','15000','30days')

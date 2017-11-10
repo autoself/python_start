@@ -11,6 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
 from application import schoole_view
+from application import student_view
 
 def run():
     shows_view = u'''
@@ -30,6 +31,10 @@ def run():
             if check_num > 0 and check_num < 6:
                 if check_num == 1:
                     check_status = schoole_view.run()
+                    if check_status:
+                        check_status = True
+                elif check_num == 3:
+                    check_status = student_view.run()
                     if check_status:
                         check_status = True
                 elif check_num == 4:
