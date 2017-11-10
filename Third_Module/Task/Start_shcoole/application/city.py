@@ -67,12 +67,13 @@ def __select_db(city,getname):
     elif getname == 'create_student':
         name = input('学生名>>')
         age = input('年龄>>')
+        pay = input('缴费>>')
         achievement = input('成绩>>')
         schoole_class = input('班级>>')
-        if not name or not age or not achievement or not schoole_class:
+        if not name or not age or not achievement or not schoole_class or not pay:
             print('\033[35;1m请把所有参数输入完整,感谢您的合作!\033[0m')
             return False
-        check_status_obj = object_city.create_student(name,age,achievement,schoole_class)
+        check_status_obj = object_city.create_student(name,age,pay,achievement,schoole_class)
         return check_status_obj
     elif getname == 'get_student':
         name = input('学生名>>')
@@ -81,7 +82,17 @@ def __select_db(city,getname):
             return False
         check_status_obj = object_city.get_student(name)
         return check_status_obj
-
+    elif getname == 'create_s_student':
+        name = input('学生名>>')
+        age = input('年龄>>')
+        pay = input('缴费>>')
+        achievement = '0'
+        schoole_class = input('班级>>')
+        if not name or not age or not achievement or not schoole_class or not pay:
+            print('\033[35;1m请把所有参数输入完整,感谢您的合作!\033[0m')
+            return False
+        check_status_obj = object_city.create_student(name, age, pay, achievement, schoole_class)
+        return check_status_obj
 def Cityrun(getname):
     shows_view = u'''
     \033[35;1m------- City View --------\033[0m

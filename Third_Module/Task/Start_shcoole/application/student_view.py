@@ -44,7 +44,7 @@ def run():
                     check_schoole_db = __check_schoole()
                     if not check_schoole_db:
                         print('\033[35;1m请选创建学校,感谢您的配合\033[0m')
-                    obj = Cityrun('create_student')
+                    obj = Cityrun('create_s_student')
                     if obj:
                         return True
                     continue

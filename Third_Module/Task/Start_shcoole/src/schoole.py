@@ -179,8 +179,8 @@ class  Schoole(object):
         return False
 
 
-    def create_student(self,name,age,achievement,schoole_class):
-        object_db = Student(self.__student_db,self.__class_db,name,age,achievement,schoole_class)
+    def create_student(self,name,age,pay,achievement,schoole_class):
+        object_db = Student(self.__student_db,self.__class_db,name,age,pay,achievement,schoole_class)
         db_status = object_db.create_student()
         if db_status :
             print('创建学生成功:%s！' % (name))
@@ -196,7 +196,7 @@ class  Schoole(object):
             if db:
                 for key in db:
                     if name == db[key]['name']:
-                        print('学生名>>%s,年龄>>%s,成绩>>%s,班级>>%s' % (db[key]['name'], db[key]['age'], db[key]['achievement'], db[key]['schoole_class']))
+                        print('学生名>>%s,年龄>>%s,缴费>>%s,成绩>>%s,班级>>%s' % (db[key]['name'], db[key]['age'], db[key]['pay'], db[key]['achievement'], db[key]['schoole_class']))
                         return True
         print('对不起,没有你要查的学生')
 

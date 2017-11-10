@@ -12,7 +12,7 @@ class Student(object):
     '''
       学生
     '''
-    def __init__(self,student_db,class_db,name,age,achievement,schoole_class):
+    def __init__(self,student_db,class_db,name,age,pay,achievement,schoole_class):
         '''
         :param city               城市
         :param name:              学生名
@@ -24,6 +24,7 @@ class Student(object):
         self.name = name
         self.age = age
         self.achievement = achievement
+        self.pay = pay
         self.schoole_class = schoole_class
         self.__student_db =  student_db
         self.__class_db = class_db
@@ -72,7 +73,7 @@ class Student(object):
         else:
             db = {}
         maxid = maxnums + 1
-        db[maxid] = {'name': self.name, 'age': self.age, 'achievement':self.achievement,'schoole_class':self.schoole_class }
+        db[maxid] = {'name': self.name, 'age': self.age, 'pay':self.pay,'achievement':self.achievement,'schoole_class':self.schoole_class }
         with open(self.__student_db, 'wb') as fp:
             pickle.dump(db, fp)
         return True
