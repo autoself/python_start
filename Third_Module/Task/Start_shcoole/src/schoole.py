@@ -155,8 +155,8 @@ class  Schoole(object):
         print('对不起,没有你要查的班级')
         return False
 
-    def create_teacher(self,name):
-        object_db = Teacher(self.__teacher_db,name,self.schoole_city)
+    def create_teacher(self,name,password):
+        object_db = Teacher(self.__teacher_db,name,self.schoole_city,password)
         db_stuts = object_db.create_teacher()
         if db_stuts:
             print('创建讲师成功:%s！' % (name))
@@ -172,7 +172,7 @@ class  Schoole(object):
             if db:
                 for key in db:
                     if name == db[key]['name']:
-                        print('讲师名>>%s,学区>>%s' % (db[key]['name'],db[key]['schoole_city']))
+                        print('讲师名>>%s,学区>>%s,密码>>%s' % (db[key]['name'],db[key]['schoole_city'],db[key]['password']))
                         return True
 
         print('对不起,没有你要查的讲师')
@@ -214,19 +214,71 @@ class  Schoole(object):
                     if data[key]['name'] == name:
                         return False
         return True
-    def pull_student(self,name,city,schoole_class):
+    def pull_student(self,name,pay):
         check_name = self.__check_student(self.__student_db,name)
         if check_name:
             print("\033[34;学员不存在,请先注册!\033[0m")
             return False
+        with open(self.__student_db,'rb') as fs:
+            data = pickle.load(fs)
+        for key in data:
+            if name == data[key]['name']:
+                data[key]['pay'] = pay
+        with open(self.__student_db,'wb') as fw:
+            pickle.dump(data,fw)
+        print('%s你已成功交费' % name )
+        return True
+
+
+    def __check_class_teacher(self,teacher_name,class_data):
+        with open(self.__class_db,'rb') as fcr:
+            db_class = pickle.load(fcr)
+        for cdb in db_class:
+            if db_class[cdb]['name'] == class_data and db_class[cdb]['teacher']:
+                return True
+        else:
+            return False
+
+    def get_teacher_student(self,teacher_name,class_data):
+        check_class_db = self.__check_class_teacher(teacher_name,class_data)
+        if not check_class_db:
+            print('\033[33;1m 讲师对应的班级不存在!\033[0m')
+            return False
+
+        with open(self.__student_db,'rb') as fsr:
+            st_db = pickle.load(fsr)
+
+        check_stu = 1
+        for key in st_db:
+            if st_db[key]['schoole_class'] == class_data:
+                check_stu = 0
+                print('\033[33;1m 有学员>>>%s\033[0m' % st_db[key]['name'])
+        if check_stu == 1:
+            print('\033[33;1m  暂时没有任何学员！\033[0m')
+        return True
 
 
 
+    def change_teacher_course(self,teacher_name,class_data,student_name,achievement):
+        check_class_db = self.__check_class_teacher(teacher_name, class_data)
+        if not check_class_db:
+            print('\033[33;1m 讲师对应的班级不存在!\033[0m')
+            return False
+        with open(self.__student_db,'rb') as fsr:
+            st_db = pickle.load(fsr)
 
-
-
-
-
+        check_stu = 1
+        for key in st_db:
+            if st_db[key]['schoole_class'] == class_data and st_db[key]['name'] == student_name:
+                check_stu = 0
+                st_db[key]['achievement'] = achievement
+        if check_stu == 1:
+            print('\033[33;1m  没有在讲师所在班级中找到此学员！\033[0m' )
+            return False
+        with open(self.__student_db,'wb') as fsw:
+            pickle.dump(st_db,fsw)
+        print('\033[33;1m  学员%s成绩修改完成！\033[0m' % student_name)
+        return True
 
 #if __name__ == '__main__':
 #    object_schoole = Schoole('依林大学院校','北京是环市东路1号','BeiJing')

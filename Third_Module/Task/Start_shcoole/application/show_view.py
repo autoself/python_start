@@ -12,7 +12,7 @@ sys.path.append(BASE_DIR)
 
 from application import schoole_view
 from application import student_view
-
+from application import teacher_view
 def run():
     shows_view = u'''
     \033[35;1m------- City View --------\033[0m
@@ -33,6 +33,8 @@ def run():
                     check_status = schoole_view.run()
                     if check_status:
                         check_status = True
+                elif check_num == 2:
+                    check_status = teacher_view.Cityrun()
                 elif check_num == 3:
                     check_status = student_view.run()
                     if check_status:
