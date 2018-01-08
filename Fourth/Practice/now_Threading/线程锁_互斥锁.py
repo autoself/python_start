@@ -22,17 +22,18 @@ def addNum():
     time.sleep(1)
 
     lock.acquire() #修改数据前加锁
+    time.sleep(1)
     num -=1  #对此公共变量进行-1操作
     lock.release()  # 修改后释放
-    print('--backup: ' , num )
+    #print('--backup: ' , num )
 
 num = 100 #设定一个共享变量
 
 thread_list = []
 
 lock = threading.Lock() #生成全局锁
-
-for i in range(100):
+start_time = time.time()
+for i in range(5):
     t = threading.Thread(target=addNum)
     t.start()
     thread_list.append(t)
@@ -42,3 +43,4 @@ for t in thread_list: #等待所有线程执行完毕
 
 
 print('final num: ' , num )
+print("cost: ",time.time() - start_time)
