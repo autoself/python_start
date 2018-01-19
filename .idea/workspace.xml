@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a3420d6-1c94-44e3-a16b-5afabec68994" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/select_socket_server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_socketserver.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_system.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/server_system.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/sever_socketserver.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/new_process/cc_managers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/new_process/进程  --- 管道.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/new_process/进程_queue.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/new_process/进程同步.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/new_process/进程池　.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/Gevent _01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/greenlet_01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/socket_process/client_socet.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/socket_process/client_threading.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/socket_process/server_socket.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/test_01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/协程_01.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/同步与异步.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/协程/爬虫.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="cc0bc47d-f1e3-40a6-9118-36f4fa915c69" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/pickle_01.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/ssh/paramiko_01.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/ssh/paramiko_02.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Practice/ssh/paramiko_03.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Task/Eighth_work/add_user.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Task/Eighth_work/client_socket.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Task/Eighth_work/etc/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Task/Eighth_work/etc/setting.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/Task/Eighth_work/server_socket.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fourth/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Second_Module/Practice/进度条.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_socketserver.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/client_socketserver.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_system.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/client_system.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_client.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/ftp_client.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_server.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/ftp_server.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/log.txt" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/log.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/server_system.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/server_system.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/sever_socketserver.py" afterPath="$PROJECT_DIR$/Fourth/Practice/socket_实战/sever_socketserver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/client_select.py" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/client_select.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Fourth/Practice/IO/io_select.py" afterPath="$PROJECT_DIR$/Fourth/Practice/IO/io_select.py" />
     </list>
     <ignored path="python_start.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,17 +34,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python_start$ftp_server.coverage" NAME="ftp_server Coverage Results" MODIFIED="1516088825897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-    <SUITE FILE_PATH="coverage/python_start$.coverage" NAME="多进程 Coverage Results" MODIFIED="1515403816581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/new_process" />
-    <SUITE FILE_PATH="coverage/python_start$client_socketserver.coverage" NAME="client_socketserver Coverage Results" MODIFIED="1516091323952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-    <SUITE FILE_PATH="coverage/python_start$get_id.coverage" NAME="get_进程id Coverage Results" MODIFIED="1515404870708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/new_process" />
-    <SUITE FILE_PATH="coverage/python_start$io_select.coverage" NAME="io_select Coverage Results" MODIFIED="1516001318970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO" />
-    <SUITE FILE_PATH="coverage/python_start$client_select.coverage" NAME="client_select Coverage Results" MODIFIED="1516006417118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO" />
-    <SUITE FILE_PATH="coverage/python_start$select_socket_server.coverage" NAME="select_socket_server Coverage Results" MODIFIED="1516006410889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO" />
-    <SUITE FILE_PATH="coverage/python_start$sever_socketserver.coverage" NAME="sever_socketserver Coverage Results" MODIFIED="1516091276834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-    <SUITE FILE_PATH="coverage/python_start$ftp_client.coverage" NAME="ftp_client Coverage Results" MODIFIED="1516088827409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-    <SUITE FILE_PATH="coverage/python_start$server_system.coverage" NAME="server_system Coverage Results" MODIFIED="1516083580063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-    <SUITE FILE_PATH="coverage/python_start$client_system.coverage" NAME="client_system Coverage Results" MODIFIED="1516083583009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
+    <SUITE FILE_PATH="coverage/python_start$.coverage" NAME="进度条 Coverage Results" MODIFIED="1516350169484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Second_Module/Practice" />
+    <SUITE FILE_PATH="coverage/python_start$server_socket.coverage" NAME="server_socket Coverage Results" MODIFIED="1516353757653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
+    <SUITE FILE_PATH="coverage/python_start$client_socket.coverage" NAME="client_socket Coverage Results" MODIFIED="1516348554836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
+    <SUITE FILE_PATH="coverage/python_start$add_user.coverage" NAME="add_user Coverage Results" MODIFIED="1516353698457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -74,19 +62,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Fourth/Practice/now_Threading/吃饱子.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/new_process/多进程.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/new_process/get_进程id.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/io_select.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/client_select.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/select_socket_server.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/server_system.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_system.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_client.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_server.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/log.txt" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/sever_socketserver.py" />
-        <option value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_socketserver.py" />
+        <option value="$PROJECT_DIR$/Fourth/Task/Eighth_work/add_user.py" />
+        <option value="$PROJECT_DIR$/Second_Module/Practice/进度条.py" />
+        <option value="$PROJECT_DIR$/Fourth/Task/Eighth_work/client_socket.py" />
+        <option value="$PROJECT_DIR$/Fourth/Task/Eighth_work/server_socket.py" />
       </list>
     </option>
   </component>
@@ -99,8 +78,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="28" />
-    <option name="width" value="1282" />
-    <option name="height" value="707" />
+    <option name="width" value="1922" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -127,6 +106,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,7 +154,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Practice" />
+              <option name="myItemId" value="Task" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -191,159 +172,90 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Practice" />
+              <option name="myItemId" value="Task" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Socket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_start" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_start" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fourth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Practice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_start" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_start" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fourth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Practice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socket_实战" />
+              <option name="myItemId" value="Eighth_work" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.client_socketserver">
-    <configuration default="false" name="client_system" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.add_user">
+    <configuration default="false" name="add_user" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_start" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_system.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Task/Eighth_work/add_user.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="ftp_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="server_socket" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_start" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_server.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Task/Eighth_work/server_socket.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="ftp_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="client_socket" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Task/Eighth_work" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_start" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Task/Eighth_work/client_socket.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="sever_socketserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="进度条" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Second_Module/Practice" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_start" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/sever_socketserver.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="client_socketserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_start" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_socketserver.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Second_Module/Practice/进度条.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -431,12 +343,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -556,20 +462,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.client_system" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ftp_server" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ftp_client" />
-      <item index="3" class="java.lang.String" itemvalue="Python.sever_socketserver" />
-      <item index="4" class="java.lang.String" itemvalue="Python.client_socketserver" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.add_user" />
+      <item index="1" class="java.lang.String" itemvalue="Python.server_socket" />
+      <item index="2" class="java.lang.String" itemvalue="Python.client_socket" />
+      <item index="3" class="java.lang.String" itemvalue="Python.进度条" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.client_socketserver" />
-        <item index="1" class="java.lang.String" itemvalue="Python.sever_socketserver" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ftp_client" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ftp_server" />
-        <item index="4" class="java.lang.String" itemvalue="Python.client_system" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.server_socket" />
+        <item index="1" class="java.lang.String" itemvalue="Python.add_user" />
+        <item index="2" class="java.lang.String" itemvalue="Python.进度条" />
+        <item index="3" class="java.lang.String" itemvalue="Python.client_socket" />
       </list>
     </recent_temporary>
   </component>
@@ -578,29 +482,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8a3420d6-1c94-44e3-a16b-5afabec68994" name="Default" comment="" />
-      <created>1515392940514</created>
+      <changelist id="cc0bc47d-f1e3-40a6-9118-36f4fa915c69" name="Default" comment="" />
+      <created>1516326316153</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1515392940514</updated>
+      <updated>1516326316153</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1282" height="707" extended-state="6" />
+    <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34609374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990307" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1328125" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.50208336" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49791667" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -618,313 +522,131 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Third_Module/Task/ftpsock/server/ftpserver.py</url>
-          <line>208</line>
+          <url>file://$PROJECT_DIR$/Fourth/Task/Eighth_work/add_user.py</url>
+          <line>18</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Fourth/Task/Eighth_work/server_socket.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Fourth/Task/Eighth_work/client_socket.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/io_select.py">
+    <entry file="file://$PROJECT_DIR$/Fourth/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/client_select.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/吃饱子.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/多进程.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/get_进程id.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/get_进程id.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Third_Module/Practice/socket_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Third_Module/Practice/socket_01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Third_Module/Practice/socket_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/271015849/_socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="915" column="8" selection-start-line="915" selection-start-column="8" selection-end-line="915" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Third_Module/Task/ftpsock/client/ftpclient.py">
+    <entry file="file://$PROJECT_DIR$/Fourth/Practice/socket_实战/ftp_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Third_Module/Task/ftpsock/server/ftpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="171" column="17" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2803">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/selectors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="610" column="4" selection-start-line="610" selection-start-column="4" selection-end-line="610" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/client_select.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/进程池　.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/io_select.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/进程同步.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/进程_queue.py">
+    <entry file="file://$PROJECT_DIR$/Fourth/Practice/socket_实战/server_system.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/进程  --- 管道.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/多进程.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/new_process/cc_managers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/event_刷卡.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/threading_直接引用.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/信号量.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/吃饱子.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/threading_继承式调用.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/守护线程.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/now_Threading/event_01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_system.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/Socket/ftp_client.py">
+    <entry file="file://$PROJECT_DIR$/Fourth/Practice/socket_实战/sever_socketserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/server_system.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#100#113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/Socket/ftp_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/ftp_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="8" selection-start-line="5" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/select_socket_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/client_socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#97#110#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/socketserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-725">
-          <caret line="690" column="30" selection-start-line="690" selection-start-column="23" selection-end-line="690" selection-end-column="30" />
+        <state relative-caret-position="-396">
+          <caret line="671" column="6" selection-start-line="671" selection-start-column="6" selection-end-line="671" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Fourth/Practice/IO/socket_实战/sever_socketserver.py">
+    <entry file="file://$PROJECT_DIR$/Fourth/Practice/socket_实战/ftp_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="-225">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Second_Module/Practice/os_study.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Second_Module/Practice/进度条.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Fourth/Task/Eighth_work/etc/setting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Fourth/Task/Eighth_work/add_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="196" column="16" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
+          <folding>
+            <element signature="e#98#121#0" expanded="true" />
+            <element signature="e#320#1905#0" expanded="false" />
+            <element signature="e#1947#2747#0" expanded="false" />
+            <element signature="e#2790#3513#0" expanded="false" />
+            <element signature="e#3547#4507#0" expanded="false" />
+            <element signature="e#4530#4809#0" expanded="false" />
+            <element signature="e#4829#4839#0" expanded="false" />
+            <element signature="e#4856#6342#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Fourth/Task/Eighth_work/server_socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+          <folding>
+            <element signature="e#100#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Fourth/Task/Eighth_work/client_socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="e#101#114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
