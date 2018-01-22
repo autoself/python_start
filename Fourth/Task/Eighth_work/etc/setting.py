@@ -15,6 +15,7 @@ DB_DIR = os.path.join(BASEDIR,'db')        #数据库目录
 USER_DIR = os.path.join(BASEDIR,'home')    #用户目录
 DB_FILE = os.path.join(DB_DIR,'db.json')   #用户表
 DB_PWD_MD5 = 'autoselfandylin'             #密码加密
+#DOWNLOAD_DIR = os.path.join(BASEDIR,'download')
 
 RED = '\033[31m'  # 红色
 GREEN = '\033[32m'  # 绿色

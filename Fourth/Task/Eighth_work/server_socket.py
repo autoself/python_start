@@ -73,26 +73,102 @@ class MySocketServer(socketserver.BaseRequestHandler):
             self.request.send('sync_err'.encode('utf8'))
             return False
 
-    def uploadfile(self,cmd):
+
+    def checkDatasize(self,user_limit_size,upload_file_size):
+        '''
+        获取目录下的所有文件的大小
+        :param user_limit_size:用户限制多少
+        :param upload_file_size: 上传的文件大小
+        :return:
+        '''
+
+        #os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])  【文件夹路径, 文件夹名字, 文件名】
+
+        allfiledir = os.walk(setting.USER_DIR)
+
+        home_user_size = 0
+
+        for root,dirs,filename in allfiledir:
+            for file in filename:
+                filedirs = os.path.join(root,file)
+                home_user_size += os.stat(filedirs).st_size
+
+        if ( int(upload_file_size) + home_user_size ) > int(user_limit_size):
+             return False
+        else:
+            return True
+
+
+
+
+    def uploadfile(self,cmd,username):
         '''
         上传文件的函数
         :param cmd: 传输的命令
         :return:
         '''
+        print(cmd)
         userdir = os.getcwd()
         filename = os.path.basename(cmd[1])
         #print(filename)
         filesize = self.request.recv(1024)
         #print(filesize)
-        self.request.send('up_ok'.encode('utf8'))
-        fw = open(filename,'wb')
+        #self.request.send('up_ok'.encode('utf8'))
         newdata = b''
         numlist = 0
-        while numlist < int(filesize.decode('utf8')):
-            data = self.request.recv(1024)
-            numlist += len(data)
-            fw.write(data)
-        fw.close()
+        with open(setting.DB_FILE,'r',encoding='utf8') as fb:
+            dbtable = json.load(fb)
+        userlist_size = ''
+        for key in dbtable:
+            if dbtable[key]['username'] == username:
+                userlist_size = dbtable[key]['disksize']
+                break
+        if not userlist_size or not filesize:
+            self.request.send('size_faile'.encode('utf8'))
+            return False
+        else:
+            check_status = self.checkDatasize(userlist_size,int(filesize.decode('utf8')))
+            if check_status:
+                self.request.send('size_ok'.encode('utf8'))
+            else:
+                self.request.send('size_faile'.encode('utf8'))
+                return False
+        try:
+            fw = open(filename, 'wb')
+            while numlist < int(filesize.decode('utf8')):
+                data = self.request.recv(1024)
+                numlist += len(data)
+                fw.write(data)
+            fw.close()
+            self.request.send('finsh'.encode('utf8'))
+            return True
+        except:
+            return False
+
+    def downloadfile(self,cmd):
+        '''
+        进行下载文件
+        :param cmd: 执行命令
+        :return:
+        '''
+        userfile = os.getcwd() + os.sep + cmd[1]
+        if os.path.isfile(userfile):
+            self.request.send('up_ok'.encode('utf8'))
+            filesize = os.stat(userfile).st_size
+            data_ack_ok1 = self.request.recv(1024).decode('utf8')
+            self.request.send(str(filesize).encode('utf8'))
+            #print(filesize)
+            data_ack_ok2 = self.request.recv(1024).decode('utf8')
+            if data_ack_ok2:
+                fb = open(userfile,'rb')
+                for line in fb:
+                    self.request.send(line)
+                fb.close()
+                return
+
+        else:
+            self.request.send('up_faild'.encode('utf8'))
+            return False
 
     def run(self,data,username):
         cmd = data.decode('utf8').split()
@@ -107,11 +183,9 @@ class MySocketServer(socketserver.BaseRequestHandler):
         elif cmd[0] == 'cd':
             self.changeuserdir(cmd,username)
         elif cmd[0] == 'upload':
-            self.uploadfile(cmd)
-
-
-
-
+            self.uploadfile(cmd,username)
+        elif cmd[0] == 'download':
+            self.downloadfile(cmd)
 
 
 
@@ -131,7 +205,6 @@ class MySocketServer(socketserver.BaseRequestHandler):
             data = conn.recv(1024)
             if not data: break
             self.run(data,check_login)
-
 
 
 
