@@ -23,11 +23,38 @@ Logger.addFilter(filt) , Logger.removerFilter(filt);  添加或删除指定的fi
 
 import logging
 from etc import setting
+import os
 
 
 def logger(log_type):
 
-    #
+    # create console handler and set level to level
     logger = logging.getLogger(log_type)
     logger.setLevel(setting.LOG_LEVEL)
 
+    #screen display
+    #logshow = logging.StreamHandler()
+    #logshow.setLevel(setting.LOG_LEVEL)
+
+
+    # create log directory
+    if not os.path.isdir(setting.LOG_PATH):
+        os.makedirs(setting.LOG_PATH)
+    #log file position
+    logfile = os.path.join(setting.LOG_PATH,setting.LOG_TYPES[log_type])
+
+    #create file handler, and set level
+    fh = logging.FileHandler(logfile)
+    fh.setLevel(setting.LOG_LEVEL)
+
+    #create format
+    formater = logging.Formatter("%(asctime)s %(levelname)s  %(message)s")
+
+    #file handler setting formater
+    fh.setFormatter(formater)
+
+    # addr logger handler
+    logger.addHandler(fh)
+    #logger.addHandler(logshow)
+
+    return logger

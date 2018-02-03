@@ -23,7 +23,9 @@ import logging
 
 BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 基础目录
 DB_DIR = os.path.join(BASEDIR,'db')                                    #代表为数据库
-DB_FILE = os.path.join(DB_DIR,'db.json')                               #数据表
+DB_USER = os.path.join(DB_DIR,'user.json')                             #用户数据表
+DB_GROUP = os.path.join(DB_DIR,'group.json')                           #用户组数据表
+
 
 #Log correlation type
 LOG_ACTIVE = 'ON'

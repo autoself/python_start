@@ -17,7 +17,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-from src import information_matchion
+from src import management_view
 
 if __name__ == '__main__':
-    information_matchion.run()
+    management_view.run()
