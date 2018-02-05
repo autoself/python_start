@@ -316,10 +316,10 @@ def run():
     9.退出
     \033[0m
     '''
-    print(info)
     nums = [1,2,3,4,5,6,7,8,9]
     check_status = False
     while not check_status:
+        print(info)
         select_nums = input('Plase select nums>>>').strip()
         if select_nums.isdigit():
             select_nums = int(select_nums)

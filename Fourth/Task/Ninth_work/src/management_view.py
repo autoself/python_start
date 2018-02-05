@@ -14,7 +14,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src import infomaition_machine
 from src import one_machine
-
+from src import many_machine
 
 
 def run():
@@ -41,7 +41,12 @@ def run():
                       check_status = True
                   continue
                 elif select_nums == 2:
-                    status = one_machine.run()
+                    status = one_machine.run_one()
+                    if not status:
+                        check_status = True
+                    continue
+                elif select_nums == 3:
+                    status = many_machine.run_many()
                     if not status:
                         check_status = True
                     continue
