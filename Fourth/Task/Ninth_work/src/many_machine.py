@@ -19,12 +19,12 @@ from multiprocessing import Process,Pool
 def __check_groupname(groupname):
     data = shared_information.group_machine()
     if not data:
-        print('表示数据表不存在!')
+        print('表示主机组数据表不存在!')
         return False
     if groupname in data:
         return data
     else:
-        print('没有找到相关的主机')
+        print('没有找到相关的主机组')
         return False
 
 def __check_machine_list(groupname):
@@ -32,14 +32,20 @@ def __check_machine_list(groupname):
     if not data:
         print('表示数据表不存在!')
         return False
+    machine_list = {}
     for key in data:
-        if data[key]['hostname'] == ipaddr:
-            machine = data[key]
-            break
+        if data[key]['groups'] == groupname:
+            machine_list.update({key:data[key]})
+    if machine_list:
+        return machine_list
     else:
-        print('没有找到相关的主机')
         return False
-    return machine
+
+
+def call_backend_num(arg):
+    if arg:
+
+
 
 def one_command():
     machine_hostname = input('请输入需要远程执行的主机组>>>')
@@ -47,9 +53,16 @@ def one_command():
     group_data = __check_groupname(machine_hostname)
     if not group_data:
         return False
+    machine_data = __check_machine_list(machine_hostname)
+    if not machine_data:
+        return machine_data
 
+    process_pool = Pool(4)
+    for key in machine_data:
+        process_pool.apply_async(func=shared_information.ssh_command,args=(machine_data[key]['ipaddr'],machine_data[key]['username'],machine_data[key]['password'],machine_data[key]['port'],command))
 
-
+    process_pool.close()
+    process_pool.join()
 
 
 def one_download():

@@ -34,7 +34,7 @@ def group_machine():
         '''
     if os.path.isfile(setting.DB_GROUP):
         try:
-            with open(setting.DDB_GROUP, 'r', encoding='utf8') as fr:
+            with open(setting.DB_GROUP, 'r', encoding='utf8') as fr:
                 data = json.load(fr)
             return data
         except:
@@ -61,10 +61,14 @@ def ssh_command(hostname,username,password,port,commond):
     ssh = __ssh_connect(hostname,username,password,port)
     if not ssh:
         return False
-    stdin,stdout,stderr = ssh.exec_command(commond)
-    result = stdout.read()
-    print(result)
-    ssh.close()
+    try:
+        stdin,stdout,stderr = ssh.exec_command(commond)
+        result = stdout.read()
+        print(result)
+        ssh.close()
+        return True
+    except:
+        return False
 
 
 def __ssh_scp(hostname,username,password,port):
@@ -92,6 +96,7 @@ def ssh_download(hostname,username,password,port,remote_file,local_file):
     finally:
         print('%s下载成功！' % hostname)
         ssh.close()
+        return True
 
 
 def ssh_upload(hostname,username,password,port,remote_file,local_file):
@@ -106,3 +111,4 @@ def ssh_upload(hostname,username,password,port,remote_file,local_file):
     finally:
         print('%s上传文件成功！'% hostname)
         ssh.close()
+        return True
