@@ -42,11 +42,6 @@ def __check_machine_list(groupname):
         return False
 
 
-def call_backend_num(arg):
-    if arg:
-
-
-
 def one_command():
     machine_hostname = input('请输入需要远程执行的主机组>>>')
     command = input('请输入需要远程执行的命令>>>')
@@ -69,14 +64,37 @@ def one_download():
     machine_hostname = input('请输入需要远程执行的服务器主机组>>>')
     remote_file = input('远程的文件>>>')
     loacl_file = input('本地存放的文件>>')
+    group_data = __check_groupname(machine_hostname)
+    if not group_data:
+        return False
+    machine_data = __check_machine_list(machine_hostname)
+    if not machine_data:
+        return machine_data
 
+    process_pool = Pool(4)
+    for key in machine_data:
+        process_pool.apply_async(func=shared_information.ssh_command, args=(machine_data[key]['ipaddr'], machine_data[key]['username'], machine_data[key]['password'],machine_data[key]['port'], remote_file,loacl_file))
+
+    process_pool.close()
+    process_pool.join()
 
 def one_upload():
     machine_hostname = input('请输入需要远程执行的服务器主机组>>>')
     loacl_file = input('本地存放的文件>>>>')
     remote_file  = input('上传到服务器的文件>>>')
+    group_data = __check_groupname(machine_hostname)
+    if not group_data:
+        return False
+    machine_data = __check_machine_list(machine_hostname)
+    if not machine_data:
+        return machine_data
 
+    process_pool = Pool(4)
+    for key in machine_data:
+        process_pool.apply_async(func=shared_information.ssh_command, args=(machine_data[key]['ipaddr'], machine_data[key]['username'], machine_data[key]['password'],machine_data[key]['port'], remote_file, loacl_file))
 
+    process_pool.close()
+    process_pool.join()
 
 
 def run_many():

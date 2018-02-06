@@ -64,7 +64,9 @@ def ssh_command(hostname,username,password,port,commond):
     try:
         stdin,stdout,stderr = ssh.exec_command(commond)
         result = stdout.read()
+        print("######## %s ############" % hostname)
         print(result)
+        print("#"*50)
         ssh.close()
         return True
     except:
