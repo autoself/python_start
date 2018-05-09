@@ -32,6 +32,9 @@ create_time = db.Column(DateTime, default=datetime.now())
 '''
 
 class Teacher(BaseMode):
+    '''
+    老师的表
+    '''
     __tablename__ = 'teacher'
     id = Column(Integer,primary_key=True)
     name = Column(String(32),nullable=False)
@@ -45,6 +48,9 @@ class Teacher(BaseMode):
 
 
 class Student(BaseMode):
+    '''
+    学员的表
+    '''
     __tablename__ = 'student'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
@@ -56,18 +62,27 @@ class Student(BaseMode):
 
 
 class Course(BaseMode):
+    '''
+    课程表
+    '''
     ___tablename__ = 'course'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
 
 
 class Grades(BaseMode):
+    '''
+    班级表
+    '''
     __tablename__ = 'grades'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
 
 
 class Record(BaseMode):
+    '''
+    上课记录表
+    '''
     __tablename__ = 'record'
     id = Column(Integer, primary_key=True)
     num = Column(Integer)
