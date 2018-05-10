@@ -15,7 +15,7 @@ sys.path.append(BASEHOME)
 from etc import setting
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column,Integer,String,DateTime
+from sqlalchemy import ForeignKey,Table,Column,Integer,String,DateTime
 from datetime import datetime
 
 #声明基类
@@ -30,6 +30,19 @@ create_time = db.Column(DateTime, default=datetime.now())
 
 如果想想在生成的table中有默认值使用server_default
 '''
+
+
+teacher_m2m_grades = Table('teacher_m2m_grades',BaseMode.metadata,
+                            Column('teacher_id',Integer,ForeignKey('teacher.id')),
+                            Column('grades_id',Integer,ForeignKey('grades.id')),
+                            )
+
+grades_m2m_student  = Table('grades_m2m_student',BaseMode.metadata,
+                           Column('student_id',Integer,ForeignKey('student.id')),
+                           Column('grades_id',Integer,ForeignKey('grades.id')),
+                           )
+
+
 
 class Teacher(BaseMode):
     '''
@@ -68,7 +81,8 @@ class Course(BaseMode):
     ___tablename__ = 'course'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
-
+    curriculum = Column(Integer,nullable=False)
+    grades_id = Column(Integer,ForeignKey('grades.id'))
 
 class Grades(BaseMode):
     '''
@@ -77,7 +91,7 @@ class Grades(BaseMode):
     __tablename__ = 'grades'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
-
+    course = relationship('Course')    
 
 class Record(BaseMode):
     '''
@@ -85,7 +99,13 @@ class Record(BaseMode):
     '''
     __tablename__ = 'record'
     id = Column(Integer, primary_key=True)
-    num = Column(Integer)
+    day = Column(Integer)
+
+    status = Column(Integer)
+
+
+
+
 
 
 
