@@ -16,6 +16,7 @@ from etc import setting
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey,Table,Column,Integer,String,DateTime
+from sqlalchemy.orm import relationship,backref
 from datetime import datetime
 
 #声明基类
@@ -55,6 +56,7 @@ class Teacher(BaseMode):
     relname = Column(String(32))
     create_time = Column(DateTime,default=datetime.now)
     login_time = Column(DateTime,nullable=True)
+    grades = relationship('Grades',backref('teacher'))
 
     def __repr__(self):
         print('%s' % self.name)
@@ -72,6 +74,7 @@ class Student(BaseMode):
     QQ = Column(Integer,nullable=False)
     create_time = Column(DateTime, default=datetime.now)
     login_time = Column(DateTime, nullable=True)
+    grades = relationship('Grades', backref('student'))
 
 
 class Course(BaseMode):
@@ -91,7 +94,10 @@ class Grades(BaseMode):
     __tablename__ = 'grades'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
-    course = relationship('Course')    
+    course = relationship('Course',backref('grades'))
+    teacher = relationship('Teacher',backref('grades'))
+    student = relationship('Student', backref('grades'))
+
 
 class Record(BaseMode):
     '''
@@ -100,7 +106,8 @@ class Record(BaseMode):
     __tablename__ = 'record'
     id = Column(Integer, primary_key=True)
     day = Column(Integer)
-
+    start_time = Column(DateTime, default=datetime.now)
+    end_time = Column(DateTime)
     status = Column(Integer)
 
 

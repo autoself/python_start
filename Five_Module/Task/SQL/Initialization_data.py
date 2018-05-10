@@ -29,11 +29,18 @@ grades_data_02 = model.Grades(name=u'运维自动化班')
 grades_data_03 = model.Grades(name=u'java开发脱产班')
 
 course_data_01 = model.Course(name=u'python-Web',curriculum='90',grades_id='2')
-course_data_01 = model.Course(name=u'Linux 基础',curriculum='10',grades_id='1')
-course_data_02 = model.Course(name=u'java全栈开发',curriculum='180',grades_id='3')
+course_data_02 = model.Course(name=u'Linux 基础',curriculum='10',grades_id='1')
+course_data_03 = model.Course(name=u'基础网络',curriculum='10',grades_id='1')
+course_data_04 = model.Course(name=u'java全栈开发',curriculum='180',grades_id='3')
 
 student_data_01 = model.Student(name='lin',password='123456',relname=u'唐唐',QQ='4598772')
 student_data_02 = model.Student(name='andylin',password='123456',relname=u'城城',QQ='987321')
 
 
 
+
+teacher_data_01.grades = [grades_data_01,grades_data_02]
+teacher_data_02.grades = [grades_data_01,grades_data_03]
+
+student_data_01.grades = [grades_data_01,grades_data_02]
+student_data_02.grades = [grades_data_01,grades_data_03]
