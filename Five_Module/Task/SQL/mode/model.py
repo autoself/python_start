@@ -75,7 +75,7 @@ class Student(BaseMode):
     create_time = Column(DateTime, default=datetime.now)
     login_time = Column(DateTime, nullable=True)
     grades = relationship('Grades', backref('student'))
-
+    record = relationship('Record')
 
 class Course(BaseMode):
     '''
@@ -86,6 +86,8 @@ class Course(BaseMode):
     name = Column(String(32), nullable=False)
     curriculum = Column(Integer,nullable=False)
     grades_id = Column(Integer,ForeignKey('grades.id'))
+    record = relationship('Record')
+
 
 class Grades(BaseMode):
     '''
@@ -94,10 +96,10 @@ class Grades(BaseMode):
     __tablename__ = 'grades'
     id = Column(Integer, primary_key=True)
     name = Column(String(32), nullable=False)
-    course = relationship('Course',backref('grades'))
+    course = relationship('Course')
     teacher = relationship('Teacher',backref('grades'))
     student = relationship('Student', backref('grades'))
-
+    record = relationship('Record')
 
 class Record(BaseMode):
     '''
@@ -109,11 +111,9 @@ class Record(BaseMode):
     start_time = Column(DateTime, default=datetime.now)
     end_time = Column(DateTime)
     status = Column(Integer)
-
-
-
-
-
+    student_id =  Column(Integer,ForeignKey('student.id'))
+    grades_id = Column(Integer,ForeignKey('grades.id'))
+    course_id = Column(Integer,ForeignKey('course.id'))
 
 
 #MetaData 是一个注册表
