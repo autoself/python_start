@@ -36,6 +36,6 @@ BASEHOME = os.path.dirname(os.path.abspath(__file__))
 #create database sqlandy default character set utf8;
 #grant all on sqlandy.* to 'sqlandy'@'localhost' identified by '123456';
 #返回值create_engine()是一个实例 Engine
-engine = create_engine('mysql+pymysql://sqlandy:123456@localhost/sqlandy')
+engine = create_engine('mysql+pymysql://sqlandy:123456@localhost/sqlandy?charset=utf8')
 
 
