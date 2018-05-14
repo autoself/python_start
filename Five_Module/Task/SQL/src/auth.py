@@ -11,16 +11,15 @@ import sys
 BASEHOME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASEHOME)
 
-from etc import setting
-from sqlalchemy.orm import sessionmaker
+from src.model_session import session_db
+
 from mode import model
 import time
 
 
-def access_t_auth(username,password):
-    Session_class = sessionmaker(bind=setting.engine)
-    Session = Session_class()
-    data = Session.query(model.Teacher).filter_by(name=username).first()
+def access_auth(dbtable,username,password):
+    Session = session_db()
+    data = Session.query(dbtable).filter_by(name=username).first()
     if data:
         if data.password == password:
             data.login_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
@@ -31,20 +30,19 @@ def access_t_auth(username,password):
 
 
 
-def access_s_auth(username, password):
-    pass
-
 def access_login(user_data,selectname):
     retry_login_count = 0
     while user_data['is_auth'] is not True and retry_login_count < 3:
         username = input("\033[32;1musername:\033[0m").strip()
         password = input("\033[32;1mpassword:\033[0m").strip()
-        if selectname == 'teacher':
-            auth = access_t_auth(username, password)
-        else:
-            auth = access_s_auth(username,password)
-        if auth:
-            user_data['is_auth'] = True
-            user_data['username'] = username
-            return auth
+        if username and password:
+            if selectname == 'teacher':
+                auth = access_auth(model.Teacher,username, password)
+            else:
+                auth = access_auth(model.Student,username,password)
+            if auth:
+                user_data['is_auth'] = True
+                user_data['username'] = username
+                return auth
+        print('\033[36;1m请输入正确的用户名和密码!\033[0m')
         retry_login_count += 1

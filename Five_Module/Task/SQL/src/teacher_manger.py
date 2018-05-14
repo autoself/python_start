@@ -15,8 +15,34 @@ from mode import model
 from src import auth
 from src.auth_login import user_data,auth_login
 
-
 from sqlalchemy.orm import sessionmaker
+
+
+@auth_login
+def create_grades():
+    pass
+
+@auth_login
+def create_course():
+    pass
+
+@auth_login
+def create_student():
+    pass
+
+@auth_login
+def create_record():
+    pass
+
+@auth_login
+def show_manger_grades():
+    pass
+
+@auth_login
+def change_student_task():
+    pass
+
+
 
 @auth_login
 def Show_Info():
@@ -38,17 +64,17 @@ def Show_Info():
         select_all_view_nums = input('\033[34;1mPlease nums>>>>\033[0m')
         if select_all_view_nums.isdigit():
             if select_all_view_nums == '1':
-                pass
+                create_grades()
             elif select_all_view_nums == '2':
-                pass
+                create_course()
             elif select_all_view_nums == '3':
-                pass
+                create_student()
             elif select_all_view_nums == '4':
-                pass
+                create_record
             elif select_all_view_nums == '5':
-                pass
+                show_manger_grades()
             elif select_all_view_nums == '6':
-                pass
+                change_student_task()
             elif select_all_view_nums == '7':
                 user_data['is_auth'] = False
                 return True
