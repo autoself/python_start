@@ -120,13 +120,17 @@ class Record(BaseMode):
     day = Column(Integer)
     start_time = Column(Date)
     end_time = Column(Date)
+    achievement = Column(Integer)
+    task = Column(Integer)
     status = Column(Integer)
     student_id =  Column(Integer,ForeignKey('student.id'))
     grades_id = Column(Integer,ForeignKey('grades.id'))
     course_id = Column(Integer,ForeignKey('course.id'))
-     
+
     def __repr__(self):
         print('%s' % self.day)
+
+
 
 #MetaData 是一个注册表
 #BaseMode.metadata.create_all(setting.engine)

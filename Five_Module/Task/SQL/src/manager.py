@@ -31,10 +31,12 @@ def run():
                 status = teacher_manger.run()
                 if not status:
                     check_all_view_status = True
+                    print('\033[36;1m欢迎下次光临,再见!\033[0m')
             elif select_all_view_nums == '2':
                 status = student_manger.run()
                 if not status:
                     check_all_view_status = True
+                    print('\033[36;1m欢迎下次光临,再见!\033[0m')
             elif select_all_view_nums == '3':
                 print('\033[36;1m欢迎下次光临,再见!\033[0m')
                 check_all_view_status = True
@@ -43,4 +45,3 @@ def run():
         else:
             print('\033[33;1m请选择正确的选项，感谢你的合作!\033[0m')
 
-run()
